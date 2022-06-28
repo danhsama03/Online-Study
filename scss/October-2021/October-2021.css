@@ -25,6 +25,18 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  color: #060606;
+  font-family: "Roboto", sans-serif;
+}
+
 .container {
   width: 95%;
   padding-right: 15px;
@@ -43,18 +55,6 @@ a {
 .img-fluid {
   max-width: 100%;
   height: auto;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-  color: #060606;
-  font-family: "Roboto", sans-serif;
 }
 
 header #site-header {
