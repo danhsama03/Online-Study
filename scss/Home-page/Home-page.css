@@ -1,16 +1,14 @@
-p {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+p {
   font-size: 16px;
   line-height: 28px;
   color: #6b6768;
   font-weight: 400;
-}
-
-ul,
-ol {
-  margin: 0;
-  padding: 0;
 }
 
 ul {
@@ -31,10 +29,15 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  padding: 0;
   color: #060606;
   font-family: "Roboto", sans-serif;
+}
+
+i {
+  background: rgba(255, 255, 255, 0.18);
+  margin-left: 8px;
+  border-radius: 50%;
+  text-align: center;
 }
 
 .container {
@@ -65,7 +68,6 @@ header #site-header {
   display: grid;
   align-items: center;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
-  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -75,9 +77,9 @@ header .container-header {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 85%;
+  max-width: 100%;
+  position: fixed;
+  z-index: 1030;
 }
 header nav {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
@@ -86,20 +88,13 @@ header nav {
   justify-content: space-between;
   margin: 0;
   padding: 0;
-}
-header nav .navbar {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
-  position: relative;
+  padding: 0.75% 2%;
+  margin: 0 5%;
+  position: fixed;
   display: flex;
-}
-@media (min-width: 992px) {
-  header nav {
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-  }
 }
 header nav h1 {
   margin: 0;
@@ -155,12 +150,6 @@ header nav .navbar-collapse #primary-menu .menu-item .link-red {
   display: block;
   padding: 0.5rem 1rem;
 }
-@media (min-width: 992px) {
-  header nav .navbar-collapse #primary-menu .menu-item .link-red {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-  }
-}
 header nav .navbar-collapse #primary-menu .menu-item .link {
   padding: 10px 0;
   font-size: 16px;
@@ -169,60 +158,76 @@ header nav .navbar-collapse #primary-menu .menu-item .link {
   display: block;
   padding: 0.5rem 1rem;
 }
-@media (min-width: 992px) {
-  header nav .navbar-collapse #primary-menu .menu-item .link {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-  }
-}
 header nav .navbar-collapse #primary-menu .menu-item a:hover {
   color: #f50057;
 }
-header nav .search {
+header nav .navbar-collapse .search {
   border-radius: 30px;
   background-color: #f50057;
   padding: 12px 25px;
   border: none;
   margin-left: 15px;
 }
-header nav .search a {
+header nav .navbar-collapse .search a {
   font-size: 15px;
   color: #fff;
   font-weight: 600;
 }
+header nav .navbar-collapse .search:hover {
+  background-color: #3f3d56;
+}
 header nav .icon {
   margin-left: 5%;
 }
+header nav .icon-menu {
+  color: #f50057;
+  display: none;
+}
+@media (max-width: 1060px) {
+  header nav .icon-menu {
+    display: inline-block;
+  }
+}
+@media (min-width: 992px) {
+  header nav {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+}
 
-#home {
+#get-started {
   background-image: url(https://wp.w3layouts.com/online-study/wp-content/themes/online-study/assets/images/banner.png);
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 95vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
-#home .container-left {
+#get-started .container-left {
   max-width: 50%;
 }
-#home .container-left h3 {
+#get-started .container-left h3 {
   font-size: 48px;
   line-height: 58px;
   font-weight: 600;
   text-transform: capitalize;
+  margin-bottom: 5%;
 }
-#home .container-left button {
+#get-started .container-left button {
   background-color: #f50057;
   border-radius: 30px;
   padding: 15px 50px;
   border: none;
 }
-#home .container-left button a {
+#get-started .container-left button a {
   color: #fff;
   font-size: 15px;
   font-weight: 500;
 }
-#home .container-right {
+#get-started .container-left button:hover {
+  background-color: #3f3d56;
+}
+#get-started .container-right {
   max-width: 50%;
 }
 
@@ -272,7 +277,7 @@ header nav .icon {
   color: #fff;
   font-weight: 500;
 }
-#about-us .container-right a a:hover {
+#about-us .container-right a:hover {
   background-color: #f50057;
 }
 
@@ -300,6 +305,11 @@ header nav .icon {
 #our-expert-teachers .small-container img {
   width: 100%;
   border-radius: 10px;
+  transition: 1s;
+}
+#our-expert-teachers .small-container img:hover {
+  transform: translateY(-10px);
+  box-shadow: 5px 10px 18px rgba(21, 22, 23, 0.18);
 }
 #our-expert-teachers .small-container .content {
   background: #fff;
@@ -312,51 +322,13 @@ header nav .icon {
   font-weight: bold;
   color: #060606;
 }
+#our-expert-teachers .small-container .content a:hover {
+  color: #f50057;
+}
 #our-expert-teachers .small-container .content p {
   font-size: 15px;
   line-height: 20px;
   margin: 2px 0 20px;
-}
-
-#what-our-people-say {
-  position: relative;
-}
-#what-our-people-say .background {
-  background: #fbfbfb;
-}
-#what-our-people-say .background .title-heading {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-#what-our-people-say .background .title-heading h3 {
-  font-size: 40px;
-  line-height: 55px;
-  font-weight: 600;
-}
-#what-our-people-say .background .owl-dots {
-  text-align: center;
-  -webkit-tap-highlight-color: transparent;
-  margin-top: 40px;
-}
-#what-our-people-say .background .owl-dots .owl-dot {
-  display: inline-block;
-  zoom: 1;
-  background: 0 0;
-  color: inherit;
-  border: none;
-  padding: 0;
-}
-#what-our-people-say .background .owl-dots .owl-dot span {
-  width: 12px;
-  height: 12px;
-  margin: 5px 5px;
-  background: #dedede;
-  display: block;
-  transition: opacity 0.2s ease;
-  border-radius: 30px;
-  outline: none;
-  opacity: 0.6;
 }
 
 #our-latest-articles {
@@ -380,6 +352,8 @@ header nav .icon {
 }
 #our-latest-articles .small-container {
   max-width: 28%;
+  transition: 0.5s ease;
+  height: 10%;
 }
 #our-latest-articles .small-container img {
   width: 100%;
@@ -387,7 +361,7 @@ header nav .icon {
 }
 #our-latest-articles .small-container .post-thumbnail {
   width: 100%;
-  height: 250px;
+  height: 55%;
   display: block;
   overflow: hidden;
 }
@@ -417,6 +391,13 @@ header nav .icon {
   margin-top: 10px;
   display: block;
   font-weight: bold;
+}
+#our-latest-articles .small-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 5px 10px 18px rgba(21, 22, 23, 0.18);
+}
+#our-latest-articles .small-container:hover a {
+  color: #f50057;
 }
 
 #footer {
@@ -474,6 +455,9 @@ header nav .icon {
   margin-left: 8px;
   border-radius: 50%;
   text-align: center;
+}
+#footer .footer-sub .box-text-center a:hover {
+  background-color: #3f3d56;
 }
 #footer .footer-sub .row {
   margin-top: 10%;

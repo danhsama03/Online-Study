@@ -1,16 +1,14 @@
-p {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+p {
   font-size: 16px;
   line-height: 28px;
   color: #6b6768;
   font-weight: 400;
-}
-
-ul,
-ol {
-  margin: 0;
-  padding: 0;
 }
 
 ul {
@@ -31,10 +29,15 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  padding: 0;
   color: #060606;
   font-family: "Roboto", sans-serif;
+}
+
+i {
+  background: rgb(255 255 255 / 18%);
+  margin-left: 8px;
+  border-radius: 50%;
+  text-align: center;
 }
 
 .container {
