@@ -28,9 +28,6 @@ header {
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 5%);
     border-radius: 30px;
     background-color: #fff;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -38,6 +35,8 @@ header {
     margin: 0 5%;
     position: fixed;
     display: flex;
+    margin: 0 auto;
+    width: 89%;
 
     h1 {
       margin: 0;
@@ -68,21 +67,71 @@ header {
       }
     }
 
+    .menu-dropdown {
+      border: none;
+      display: block;
+
+      @media (min-width: 1060px) {
+        display: none;
+      }
+
+      @media (max-width: 1060px) {
+        margin-right: -500px;
+      }
+
+      @media (max-width: 992px) {
+        margin-right: -400px;
+      }
+
+      @media (max-width: 850px) {
+        margin-right: -300px;
+      }
+
+      @media (max-width: 768px) {
+        margin-right: -200px;
+      }
+
+      @media (max-width: 640px) {
+        margin-right: -100px;
+      }
+
+      @media (max-width: 530px) {
+        margin-right: -20px;
+      }
+
+      span {
+        color: #fff;
+        background-color: #f50057;
+        padding: 8px;
+        border-radius: 5px;
+        font-size: 22px;
+      }
+    }
+
+    .menu-dropdown:hover {
+      background-color: #3f3d56;
+      .navbar-collapse {
+        display: block;
+      }
+    }
+
     .navbar-collapse {
       flex-basis: 100%;
       flex-grow: 1;
       align-items: center;
+      display: none;
 
-      @media (min-width: 992px) {
+      @media (min-width: 1060px) {
         display: flex;
         flex-basis: auto;
       }
 
       #primary-menu {
-        @media (min-width: 992px) {
+        @media (min-width: 1060px) {
           flex-direction: row;
           margin-left: auto;
           display: flex;
+          margin-right: 5%;
         }
 
         .menu-item {
@@ -200,10 +249,20 @@ header {
       border-radius: 30px;
       max-width: 85%;
     }
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+      text-align: center;
+    }
   }
   .container-right {
     align-self: center;
     max-width: 50%;
+
+    @media (max-width: 992px) {
+      max-width: 80%;
+      margin: 8%;
+    }
 
     h6 {
       text-transform: uppercase;
@@ -276,6 +335,14 @@ header {
   .small-container {
     max-width: 22%;
 
+    @media (max-width: 992px) {
+      max-width: 45%;
+    }
+
+    @media (max-width: 410px) {
+      max-width: 100%;
+    }
+
     img {
       width: 100%;
       border-radius: 10px;
@@ -337,6 +404,16 @@ header {
     max-width: 28%;
     transition: 0.5s ease;
     height: 10%;
+
+    @media (max-width: 992px) {
+      max-width: 40%;
+      margin-bottom: 5%;
+    }
+
+    @media (max-width: 410px) {
+      max-width: 100%;
+      margin-bottom: 10%;
+    }
 
     img {
       width: 100%;
@@ -457,11 +534,25 @@ header {
     }
 
     .row {
-      margin-top: 10%;
+      margin-top: 15%;
       justify-content: center;
+      padding: 0 5%;
+
+      @media (max-width: 576px) {
+        margin-top: 40%;
+      }
 
       .small-container-about {
-        max-width: 27%;
+        width: 26%;
+
+        @media (max-width: 992px) {
+          width: 50%;
+        }
+
+        @media (max-width: 576px) {
+          width: 100%;
+          margin-bottom: 5%;
+        }
 
         h6 {
           color: #eee;
@@ -501,8 +592,78 @@ header {
       }
 
       .small-container-center {
-        max-width: 22%;
-        margin-left: 10%;
+        width: 22%;
+        margin-left: 3%;
+
+        @media (max-width: 992px) {
+          width: 50%;
+          margin-left: 0;
+        }
+
+        @media (max-width: 576px) {
+          width: 100%;
+          margin-left: 0;
+          margin-bottom: 5%;
+        }
+
+        h6 {
+          color: #eee;
+          font-size: 15px;
+          line-height: 20px;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+          border-bottom: 1px solid rgba(23, 54, 88, 0.4);
+          padding-bottom: 10px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 24px;
+          color: #cecece;
+        }
+
+        a {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 24px;
+          color: #cecece;
+          margin: 0 0 10px 0;
+          display: block;
+        }
+
+        a:before {
+          display: inline-block;
+          content: "\f101";
+          font: normal normal normal 14px/1 FontAwesome;
+          font-weight: 500;
+          margin-right: 5px;
+        }
+
+        span {
+          font-size: 18px;
+          color: #fff;
+          vertical-align: middle;
+          margin-right: 10px;
+          width: 25px;
+          text-align: center;
+        }
+      }
+
+      .small-container-center2 {
+        width: 22%;
+        margin-left: 3%;
+
+        @media (max-width: 992px) {
+          width: 50%;
+          margin-left: 0;
+        }
+
+        @media (max-width: 576px) {
+          width: 100%;
+          margin-left: 0;
+          margin-bottom: 5%;
+        }
 
         h6 {
           color: #eee;
@@ -549,8 +710,19 @@ header {
       }
 
       .small-container-contact {
-        max-width: 22%;
-        margin-left: 10%;
+        width: 22%;
+        margin-left: 2%;
+
+        @media (max-width: 992px) {
+          width: 50%;
+          margin-left: 0;
+        }
+
+        @media (max-width: 576px) {
+          width: 100%;
+          margin-left: 0;
+          margin-bottom: 5%;
+        }
 
         h6 {
           color: #eee;

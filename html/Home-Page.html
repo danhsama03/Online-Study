@@ -33,8 +33,10 @@
               />Online Study</a
             >
           </h1>
-
-          <div class="navbar-collapse" style="display: flex">
+          <button class="menu-dropdown">
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="navbar-collapse">
             <ul id="primary-menu">
               <li class="menu-item">
                 <a class="link-red" href="../html/Home-Page.html">Home</a>
@@ -58,24 +60,6 @@
               <a href="#">Search</a>
             </button>
           </div>
-
-          <a
-            href="javascript:void(0);"
-            class="icon-menu"
-            onclick="myFunction()"
-          >
-            <i class="fa fa-bars"></i>
-          </a>
-          <script>
-            function myFunction() {
-              var x = document.getElementById("navbar-collapse");
-              if (x.style.display === "flex") {
-                x.style.display = "none";
-              } else {
-                x.style.display = "flex";
-              }
-            }
-          </script>
 
           <div class="icon">
             <i class="gg-moon"></i>
@@ -351,7 +335,7 @@
                 </li>
               </ul>
             </div>
-            <div class="small-container-center">
+            <div class="small-container-center2">
               <h6>CATEGORIES</h6>
               <ul>
                 <li>
